@@ -1,0 +1,173 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+}
+
+body,
+input {
+    font-family: "Noto Sans TC", ststem-ui, sans-serif;
+    font-optical-sizing: auto;
+}
+
+main {
+    height: 100dvh;
+    background: #fff;
+    --theme-color: 217, 96%, 35%;
+    color: rgb(17 24 39);
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease;
+    pointer-events: none;
+    transform: translateY(10rem);
+    overflow: auto;
+    line-height: 1.5;
+}
+
+section.show {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+}
+
+section.last {
+    transform: translateY(-10rem);
+}
+
+.question {
+    max-width: 47rem;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.question-box {
+    margin-bottom: 4rem;
+}
+
+.question-img {
+    display: flex;
+}
+
+.question-img > div,
+.question-img > img {
+    flex: 1;
+    display: block;
+    height: 100%;
+}
+
+.question-img > div {
+    padding: 5rem;
+}
+
+.question-index {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: hsl(0, 0%, 50%);
+    margin-bottom: 0.5rem;
+}
+.intro h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+}
+.intro h2{
+    margin-block:2rem 1rem;
+}
+.intro p{
+    margin-bottom: 1rem;
+}
+
+ p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.intro li{
+    margin-bottom: .5rem;
+    margin-left: 1.5rem;
+}
+
+.text-input {
+    position: relative;
+}
+
+input {
+    color: hsl(var(--theme-color));
+    box-shadow: none;
+    width: 100%;
+    display: block;
+    border: none;
+    outline: transparent;
+    background-color: transparent;
+    padding: 0 0 0.2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-bottom: 2px solid hsl(var(--theme-color), 0.3);
+}
+
+input + div {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: hsl(var(--theme-color));
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus ~ div {
+    width: 100%;
+}
+
+button {
+    margin-top: 2rem;
+    border-radius: 0.375rem;
+    padding: 0.375rem 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    background-color: hsl(var(--theme-color));
+    color: #fff;
+    outline: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.question-box > div + div {
+    margin-top: 2rem;
+}
+
+.highlight{
+    color: hsl(0, 0%, 20%); 
+    background: hsl(var(--theme-color), 0.05);
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgb(229, 231, 235);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+}

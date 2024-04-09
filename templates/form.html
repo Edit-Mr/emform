@@ -5,146 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body,
-        input {
-            font-family: "Noto Sans TC", ststem-ui, sans-serif;
-            font-optical-sizing: auto;
-        }
-
-        main {
-            height: 100dvh;
-            background: #FFF;
-        }
-
-        section {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-out,  transform 0.5s ease;
-            pointer-events: none;
-            transform: translateY(10rem);
-        }
-
-        section.show {
-            opacity: 1;
-            transform: none;
-            pointer-events: all;
-        }
-
-        section.last {
-            transform: translateY(-10rem);
-        }
-
-        .question {
-            max-width: 45rem;
-            height: 100%;
-            margin: auto;
-            display: flex;
-            align-items: center;
-        }
-
-        .question-box {
-            margin-top: 5rem;
-            margin-bottom: 9rem;
-        }
-
-        .question-img {
-            display: flex;
-        }
-
-        .question-img>div,
-        .question-img>img {
-            flex: 1;
-            display: block;
-            height: 100%;
-        }
-
-        .question-img>div {
-            padding: 5rem;
-        }
-
-        .question-index {
-            font-size: 1rem;
-            line-height: 1.5rem;
-            color: hsl(0, 0%, 50%);
-            margin-bottom: .5rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            line-height: 2rem;
-            margin-bottom: .5rem;
-        }
-
-        p {
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .text-input {
-            position: relative;
-        }
-
-        input {
-            color: rgb(4, 69, 175);
-            box-shadow: none;
-            width: 100%;
-            display: block;
-            border: none;
-            outline: transparent;
-            background-color: transparent;
-            padding: 0 0 .2rem;
-            font-size: 1.5rem;
-            line-height: 2rem;
-            border-bottom: 2px solid rgb(4, 69, 175, .3);
-        }
-
-        input+div {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: rgb(4, 69, 175);
-            transition: all 0.3s ease-in-out;
-        }
-
-        input:focus~div {
-            width: 100%;
-        }
-
-        button {
-            margin-top: 2rem;
-            border-radius: .375rem;
-            padding: .375rem 1.25rem;
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            font-weight: 500;
-            background-color: rgb(4, 69, 175);
-            color: #FFF;
-            outline: transparent;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/form.css">
 </head>
 
 <body>
     <main>
+        <section>
+            <div class="question intro">
+                <div class="question-box">
+                    <h1>4/14 （日）網頁安全進階102 ─ 報名表單</h1>
+                    <div class="highlight">
+                        這次的課程與先前的網頁安全入門不同，在這堂課程裡會教你進階的網頁安全技巧，例如跨站腳本攻擊（XSS）、伺服器端請求偽造攻擊（SSRF）和更多你絕對會有興趣的資安技巧，透過學習這些手法，讓增進你對資安領域的了解，提升自己的資安技能。快來台中高工和我們一起學習這次的網頁安全課程吧！
+                    </div>
+                    <h2>課程詳細資訊</h2>
+                    <ul>
+                        <li><strong>主辦單位：</strong> 中部電資聯合會議 SCAICT</li>
+                        <li><strong>協辦單位：</strong> AIS3 教育部先進資通安全實務人才培育計畫</li>
+                        <li><strong>課程地點：</strong> 台中高工</li>
+                        <li><strong>課程對象：</strong> 全國高中職學生</li>
+                        <li><strong>課程費用：</strong> 免費 （當天午餐自理）</li>
+                        <li><strong>課程日期：</strong> 4/14（日）</li>
+                        <li><strong>課程時間：</strong> 9:30 ~ 16:00</li>
+                        <li><strong>課程內容：</strong>
+                            <ul>
+                                <li>進階網頁安全技巧（language trick、reverse shell、injection with waf、伺服器端請求偽造攻擊 SSRF、跨站腳本攻擊
+                                    XSS、Prototype Pollution）</li>
+                            </ul>
+                        </li>
+                        <li><strong>報名截止：</strong> 4/12（五）18:00</li>
+                    </ul>
+                    <h2>注意事項：</h2>
+                    <ol>
+                        <li>課程的通知與課程網址會由 Email 一併發放，請隨時留意。</li>
+                        <li>需要全程參與課程才能領取證書。</li>
+                    </ol>
+                    <button class="next">Next ❯</button>
+                </div>
+            </div>
+        </section>
         <section>
             <div class="question">
                 <div class="question-box">
@@ -175,6 +73,46 @@
                     </p>
                     <div class="text-input">
                         <input type="email" placeholder="info@elvismao.com">
+                        <div></div>
+                    </div>
+                    <button class="next">Next ❯</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <div class="question-box">
+                    <div class="question-index">
+                        問題3:
+                    </div>
+                    <h2>長度</h2>
+                    <p>
+                        請填寫數字
+                    </p>
+                    <div class="text-input">
+                        <input type="number" placeholder="30">
+                        <div></div>
+                    </div>
+                    <button class="next">Next ❯</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <div class="question-box">
+                    <div class="question-index">
+                        問題4:
+                    </div>
+                    <h2>班級座號</h2>
+                    <p>
+                        請填寫班級座號
+                    </p>
+                    <div class="text-input">
+                        <input type="number" placeholder="505">
+                        <div></div>
+                    </div>
+                    <div class="text-input">
+                        <input type="number" placeholder="21">
                         <div></div>
                     </div>
                     <button class="next">Next ❯</button>
