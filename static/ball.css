@@ -9,7 +9,7 @@
     pointer-events: none;
     overflow: hidden;
     z-index: 1;
-    --ball-color: 250;
+    --ball-color: 360;
     /* 220 ~ 360 */
     --complimentaryHue1: calc(var(--ball-color) + 30); /* 第一個補色 */
     --complimentaryHue2: calc(var(--ball-color) + 60); /* 第二個補色 */
@@ -17,7 +17,7 @@
     --lightness: 50%; /* 亮度 */
     background: linear-gradient(
         0deg,
-        hsl(var(--ball-color), 100%, 85%),
+        hsl(var(--ball-color), 100%, 89%),
         #fff 50%
     );
 }
