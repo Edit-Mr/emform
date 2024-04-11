@@ -12,7 +12,7 @@
 <body>
     <main>
         <section>
-            <div class="question intro">
+            <div class="question intro noNav">
                 <div class="question-box">
                     <h1>4/14 （日）網頁安全進階102 ─ 報名表單</h1>
                     <div class="author">
@@ -44,8 +44,10 @@
                         <li>需要全程參與課程才能領取證書。</li>
                     </ol>
                     <div class="start">
-                        <button class="next" id="discord"><img src="/static/discord.svg" alt="">
-                            以 Discord 身分繼續</button>
+                        <button class="next discord">
+                            <img src="/static/discord.svg" alt="">
+                            以 Discord 身分繼續
+                        </button>
                         <button class="next" disabled>不登入直接開始填寫</button>
                     </div>
                     <div class="must">
@@ -172,13 +174,13 @@
                         <div class="radio-index">
                             N
                         </div>No
-                    </label> 
+                    </label>
                     <button class="next">Next ❯</button>
                 </div>
             </div>
         </section>
         <section>
-            <div class="question">
+            <div class="question lastQuestion">
                 <div class="question-box">
                     <div class="question-index">
                         問題6:
@@ -195,14 +197,40 @@
                         <div class="radio-index">
                             B
                         </div>Female
-                    </label> 
+                    </label>
                     <input type="radio" name="b" value="email" id="email">
                     <label for="email" class="radio-input">
                         <div class="radio-index">
                             C
                         </div>email
-                    </label> 
-                    <button class="next">Next ❯</button>
+                    </label>
+                    <button class="next">送出</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="question sending noNav">
+                <div class="question-box">
+                    <h2>提交中...</h2>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="question noNav thanks">
+                <div class="question-box">
+                    <h2>
+                        感謝您的填寫！
+                    </h2>
+                    <p>
+                        我們已經收到您的報名資料，請留意您的信箱，我們將會寄送行前通知信給您。
+                    </p>
+                    <div class="highlight">
+                        <h2>加入中電會 Discord 社群</h2>
+                        <p>與中電貓和其他電神交流吧w</p>
+                        <button class="discord" onclick="window.open('https://dc.scaict.org')"><img
+                                src="/static/discord.svg" alt="">
+                            加入 Discord</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -225,12 +253,53 @@
         const main = document.querySelector('main');
         const nextBtns = document.querySelectorAll('.next');
         let current = 0;
+
+        // save all input form current status to cookie
+        const saveStatusToCookie = () => {
+            const inputs = document.querySelectorAll('input');
+            const selects = document.querySelectorAll('select');
+            const radios = document.querySelectorAll('input[type="radio"]');
+            const status = {
+                inputs: {},
+                selects: {},
+                radios: {}
+            };
+            inputs.forEach(input => {
+                status.inputs[input.id] = input.value;
+            });
+            selects.forEach(select => {
+                status.selects[select.id] = select.value;
+            });
+            radios.forEach(radio => {
+                status.radios[radio.id] = radio.value;
+            });
+            // cookie can ony be read from this domain and last form 1 month
+            document.cookie = `status=${JSON.stringify(status)};max-age=2592000`;
+        }
+
+        // load all input form last status from cookie
+        const loadStatusFromCookie = () => {
+            const cookie = document.cookie;
+            const status = cookie.split(';').find(c => c.includes('status='));
+            if (status) {
+                const { inputs, selects, radios } = JSON.parse(status.split('=')[1]);
+                Object.entries(inputs).forEach(([id, value]) => {
+                    document.querySelector(`#${id}`).value = value;
+                });
+                Object.entries(selects).forEach(([id, value]) => {
+                    document.querySelector(`#${id}`).value = value;
+                });
+                Object.entries(radios).forEach(([id, value]) => {
+                    document.querySelector(`#${id}`).checked = true;
+                });
+            }
+        }
+
         const nextPage = () => {
             main.classList.remove('backward');
             const last = document.querySelector('.last');
-            if (last) {
+            if (last)
                 last.classList.remove('last');
-            }
             const latest = document.querySelector('.show');
             if (latest) {
                 latest.classList.remove('show');
@@ -238,6 +307,7 @@
             }
             current++;
             document.querySelector(`main>section:nth-child(${current})`).classList.add('show');
+            saveStatusToCookie();
         }
         nextPage();
 
@@ -246,9 +316,8 @@
         backBtn.addEventListener('click', () => {
             main.classList.add('backward');
             const last = document.querySelector('.last');
-            if (last) {
+            if (last)
                 last.classList.remove('last');
-            }
             const latest = document.querySelector('.show');
             if (latest) {
                 latest.classList.remove('show');
@@ -256,6 +325,7 @@
             }
             current--;
             document.querySelector(`main>section:nth-child(${current})`).classList.add('show');
+            saveStatusToCookie();
         });
 
         nextBtns.forEach(btn => {

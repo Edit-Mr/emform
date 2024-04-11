@@ -98,18 +98,24 @@ section.last {
     }
 }
 
-main > .show:first-child:has(.intro) ~ nav {
+main > .show:has(.noNav) ~ nav {
     display: none;
 }
 
-#discord {
+main > .show:has(.lastQuestion) ~ nav .skip{
+    pointer-events: none;
+    background-color: hsl(var(--theme-color),.2);
+    cursor:not-allowed;
+}
+
+.discord {
     background: #5865f2;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5em;
 }
-#discord img {
+.discord img {
     width: 1.5em;
 }
 
@@ -268,8 +274,9 @@ input[type="radio"] {
     display: none;
 }
 
-.radio-input, select {
-    margin-bottom: .8rem;
+.radio-input,
+select {
+    margin-bottom: 0.8rem;
     cursor: pointer;
     min-height: 2.5rem;
     display: flex;
@@ -284,9 +291,8 @@ input[type="radio"] {
     background-color: hsl(var(--theme-color), 0.1);
 }
 
-option{
-    color: hsl(var(--theme-color),#FFF);
-
+option {
+    color: hsl(var(--theme-color), #fff);
 }
 
 input[type="radio"]:checked + .radio-input {
@@ -311,9 +317,10 @@ input[type="radio"]:checked + .radio-input {
 input[type="radio"]:checked + .radio-input .radio-index {
     background-color: hsl(var(--theme-color));
     color: #ffffff;
-} 
-.radio-input:hover,select:hover {
-    background-color: hsl(var(--theme-color), .3);
+}
+.radio-input:hover,
+select:hover {
+    background-color: hsl(var(--theme-color), 0.3);
 }
 
 .question-box > div + div {
@@ -362,4 +369,22 @@ nav > button span {
 
 .start button {
     margin: 0;
+}
+
+.sending{
+    animation: blink 1.5s infinite alternate linear;
+}
+
+@keyframes blink {  
+    0% { opacity: 1; }
+    100% { opacity: .3; }  
+}
+
+.thanks p{
+margin-block: 1rem;
+}
+
+.thanks .highlight{
+    padding-block: 2rem;
+    margin-top: 2rem;
 }
