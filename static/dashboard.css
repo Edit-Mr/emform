@@ -1,0 +1,154 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100svh;
+}
+
+body,
+input,
+button {
+    font-family: "Noto Sans TC", ststem-ui, sans-serif;
+    font-optical-sizing: auto;
+}
+
+header {
+    background: linear-gradient(to right, #2bc0e4, #eaecc6);
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1rem 1rem 2rem 1rem;
+}
+h1 {
+    width: 100%;
+    max-width: calc(1000px - 4rem);
+    margin: 0 auto;
+    font-size: 3rem;
+}
+
+#settingBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+select {
+    margin-left: 1.5rem;
+}
+
+.count {
+    flex-grow: 1;
+}
+
+article {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.form-info {
+    flex-grow: 1;
+}
+
+article:hover .form-actions {
+    display: flex;
+}
+.form-actions {
+    display: none;
+    gap: 0.8rem;
+    filter: opacity(.8)
+}
+.form-actions img {
+    height: 1.6rem;
+}
+.form-title {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+.state {
+    border-radius: 1rem;
+    height: 2rem;
+    background-color: #a7a7a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+    margin-left: 1rem;
+    line-height: 1rem;
+}
+
+.state::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.4rem;
+    display: block;
+    border-radius: 50%;
+    background-color: hsl(136, 0%, 15%);
+}
+
+.open {
+    background-color: #c2ffd2;
+    color: #004d15;
+}
+
+.open::before {
+    background-color: #004d15;
+}
+
+.closed {
+    background-color: #ffc2c2;
+    color: #4d0000;
+}
+.open::before {
+    background-color: #4d0000;
+}
+
+footer {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    color: #8b8b8b;
+}
+
+select{
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+    font-size: 1rem;
+    font-family: "Noto Sans TC", ststem-ui, sans-serif;
+    cursor: pointer;
+}
+
+.sort-direction{
+    background: url(/static/arrow-up.svg) no-repeat;
+    background-size: 1rem;
+    padding-right: 1.5rem;
+    
+}

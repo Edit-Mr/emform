@@ -102,10 +102,10 @@ main > .show:has(.noNav) ~ nav {
     display: none;
 }
 
-main > .show:has(.lastQuestion) ~ nav .skip{
+main > .show:has(.lastQuestion) ~ nav .skip {
     pointer-events: none;
-    background-color: hsl(var(--theme-color),.2);
-    cursor:not-allowed;
+    background-color: hsl(var(--theme-color), 0.2);
+    cursor: not-allowed;
 }
 
 .discord {
@@ -371,20 +371,24 @@ nav > button span {
     margin: 0;
 }
 
-.sending{
+.sending {
     animation: blink 1.5s infinite alternate linear;
 }
 
-@keyframes blink {  
-    0% { opacity: 1; }
-    100% { opacity: .3; }  
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
 }
 
-.thanks p{
-margin-block: 1rem;
+.thanks p {
+    margin-block: 1rem;
 }
 
-.thanks .highlight{
+.thanks .highlight {
     padding-block: 2rem;
     margin-top: 2rem;
 }

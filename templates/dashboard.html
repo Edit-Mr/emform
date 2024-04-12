@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>儀錶板 - embox</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+
+<body>
+    <header>
+        <button id="settingBtn"></button>
+        <h1>儀錶板</h1>
+    </header>
+    <main>
+        <div class="top">
+            <div class="count">
+                總共 20 份表單
+            </div>
+            <input type="checkbox" id="hideExpired">
+            <label for="hideExpired">隱藏已過期</label>
+            <button class="sort-direction"></button>
+            <select name="sort" id="sort">
+                <option value="filename">名稱</option>
+                <option value="created_at">建立時間</option>
+                <option value="updated_at">更新時間</option>
+            </select>
+        </div>
+        <section id="form-list">
+            <article>
+                <div class="form-info">
+                    <div class="form-title">
+                        <h2>表單名稱</h2>
+                        <div class="state closed">
+                            已關閉
+                        </div>
+                    </div>
+
+                    <p>建立時間：2020-01-01 12:00:00</p>
+                    <p>更新時間：2020-01-01 12:00:00</p>
+                </div>
+                <div class="form-actions">
+                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
+                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
+                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
+                </div>
+            </article>
+            <article>
+                <div class="form-info">
+                    <div class="form-title">
+                        <h2>表單名稱</h2>
+                        <div class="state">
+                            草稿
+                        </div>
+                    </div>
+
+                    <p>建立時間：2020-01-01 12:00:00</p>
+                    <p>更新時間：2020-01-01 12:00:00</p>
+                </div>
+                <div class="form-actions">
+                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
+                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
+                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
+                </div>
+            </article>
+            <article>
+                <div class="form-info">
+                    <div class="form-title">
+                        <h2>表單名稱</h2>
+                        <div class="state open">
+                            開放中
+                        </div>
+                    </div>
+
+                    <p>建立時間：2020-01-01 12:00:00</p>
+                    <p>更新時間：2020-01-01 12:00:00</p>
+                </div>
+                <div class="form-actions">
+                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
+                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
+                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <footer>
+        <p>embox by Elvis Mao</p>
+    </footer>
+</body>
+
+</html>
