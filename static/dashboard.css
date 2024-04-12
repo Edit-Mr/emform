@@ -23,9 +23,10 @@ header {
     height: 15rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
     padding: 1rem 1rem 2rem 1rem;
+    color: #FFF;
 }
 h1 {
     width: 100%;
@@ -54,7 +55,7 @@ main {
 }
 
 select {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 .count {
@@ -147,8 +148,16 @@ select{
 }
 
 .sort-direction{
-    background: url(/static/arrow-up.svg) no-repeat;
-    background-size: 1rem;
+    background: url(/static/arrow-up.svg) no-repeat center;
+    background-size: contain;
     padding-right: 1.5rem;
-    
+    margin-left: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+#hideExpired{
+    margin-right: .2rem;
 }
