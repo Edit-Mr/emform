@@ -1,366 +1,396 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="zh-hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+        <link rel="stylesheet" href="/static/form.css" />
+        <link rel="stylesheet" href="/static/ball.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="/static/form.css">
-    <link rel="stylesheet" href="/static/ball.css">
-</head>
+    <body>
+        <main>
+            <section>
+                <div class="question intro noNav">
+                    <div class="question-box">
+                        <h1>4/14 （日）網頁安全進階102 ─ 報名表單</h1>
+                        <div class="author">
+                            <img
+                                src="https://scaict.org/src/img/apple-touch-icon.png"
+                                alt="author thumbnail"
+                            />中電會 SCAICT 製作
+                        </div>
+                        <div class="history">
+                            你似乎填寫這份表單到一半。不用擔心! 我們已經幫你保存了進度，你可以繼續填寫。
+                        </div>
+                        <div class="highlight">
+                            這次的課程與先前的網頁安全入門不同，在這堂課程裡會教你進階的網頁安全技巧，例如跨站腳本攻擊（XSS）、伺服器端請求偽造攻擊（SSRF）和更多你絕對會有興趣的資安技巧，透過學習這些手法，讓增進你對資安領域的了解，提升自己的資安技能。快來台中高工和我們一起學習這次的網頁安全課程吧！
+                        </div>
+                        <h2>課程詳細資訊</h2>
+                        <ul>
+                            <li>
+                                <strong>主辦單位：</strong> 中部電資聯合會議
+                                SCAICT
+                            </li>
+                            <li>
+                                <strong>協辦單位：</strong> AIS3
+                                教育部先進資通安全實務人才培育計畫
+                            </li>
+                            <li><strong>課程地點：</strong> 台中高工</li>
+                            <li><strong>課程對象：</strong> 全國高中職學生</li>
+                            <li>
+                                <strong>課程費用：</strong> 免費
+                                （當天午餐自理）
+                            </li>
+                            <li><strong>課程日期：</strong> 4/14（日）</li>
+                            <li><strong>課程時間：</strong> 9:30 ~ 16:00</li>
+                            <li>
+                                <strong>課程內容：</strong>
+                                <ul>
+                                    <li>
+                                        進階網頁安全技巧（language
+                                        trick、reverse shell、injection with
+                                        waf、伺服器端請求偽造攻擊
+                                        SSRF、跨站腳本攻擊 XSS、Prototype
+                                        Pollution）
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>報名截止：</strong> 4/12（五）18:00</li>
+                        </ul>
+                        <h2>注意事項</h2>
+                        <ol>
+                            <li>
+                                課程的通知與課程網址會由 Email
+                                一併發放，請隨時留意。
+                            </li>
+                            <li>需要全程參與課程才能領取證書。</li>
+                        </ol>
+                        <div class="start">
+                            <button class="next discord">
+                                <img src="/static/discord.svg" alt="" />
+                                以 Discord 身分繼續
+                            </button>
+                            <button class="next" disabled>
+                                不登入直接開始填寫
+                            </button>
+                        </div>
+                        <div class="must">
+                            此份表單必須使用 Discord 登入才能填寫。
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題1:</div>
+                        <h2>姓名</h2>
+                        <p>請填寫中文全名</p>
+                        <div class="text-input">
+                            <input type="text" placeholder="王朝立" required />
+                            <div></div>
+                        </div>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題2:</div>
+                        <h2>Email</h2>
+                        <p>將傳送行前通知信至此信箱</p>
+                        <div class="text-input">
+                            <input
+                                type="email"
+                                placeholder="info@elvismao.com"
+                            />
+                            <div></div>
+                        </div>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題3:</div>
+                        <h2>長度</h2>
+                        <p>請填寫數字</p>
+                        <div class="text-input">
+                            <input type="number" placeholder="30" min="0"/>
+                            <div></div>
+                        </div>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題4:</div>
+                        <h2>班級座號</h2>
+                        <p>請填寫班級座號</p>
+                        <div class="text-input">
+                            <input type="number" placeholder="505" />
+                            <div></div>
+                        </div>
+                        <div class="text-input">
+                            <input type="number" placeholder="21" />
+                            <div></div>
+                        </div>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題5:</div>
+                        <h2>衣服尺寸</h2>
+                        <p>請選擇衣服尺寸</p>
+                        <select id="" required>
+                            <option value="XS">XS</option>
+                            <option value="XS">S</option>
+                            <option value="XS">M</option>
+                            <option value="XS">L</option>
+                            <option value="XS">XL</option>
+                        </select>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div class="question-box">
+                        <div class="question-index">問題6:</div>
+                        <h2>你有病嗎?</h2>
+                        <p>好問題</p>
+                        <input type="radio" name="a" value="Yes" id="Yes" required />
+                        <label for="Yes" class="radio-input">
+                            <div class="radio-index">Y</div>
+                            Yes
+                        </label>
+                        <input type="radio" name="a" value="No" id="No" />
+                        <label for="No" class="radio-input">
+                            <div class="radio-index">N</div>
+                            No
+                        </label>
+                        <button class="next">Next ❯</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question lastQuestion">
+                    <div class="question-box">
+                        <div class="question-index">問題6:</div>
+                        <h2>性別</h2>
+                        <input type="radio" name="b" value="male" id="male" />
+                        <label for="male" class="radio-input">
+                            <div class="radio-index">A</div>
+                            Male
+                        </label>
+                        <input
+                            type="radio"
+                            name="b"
+                            value="female"
+                            id="female"
+                        />
+                        <label for="female" class="radio-input">
+                            <div class="radio-index">B</div>
+                            Female
+                        </label>
+                        <input type="radio" name="b" value="email" id="email" />
+                        <label for="email" class="radio-input">
+                            <div class="radio-index">C</div>
+                            email
+                        </label>
+                        <button class="next">送出</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question lastQuestion">
+                    <div class="question-box">
+                        <div class="question-index">問題7:</div>
+                        <h2></h2>
+                        <input type="radio" name="b" value="male" id="male" />
+                        <label for="male" class="radio-input">
+                            <div class="radio-index">A</div>
+                            Male
+                        </label>
+                        <input
+                            type="radio"
+                            name="b"
+                            value="female"
+                            id="female"
+                        />
+                        <label for="female" class="radio-input">
+                            <div class="radio-index">B</div>
+                            Female
+                        </label>
+                        <input type="radio" name="b" value="email" id="email" />
+                        <label for="email" class="radio-input">
+                            <div class="radio-index">C</div>
+                            email
+                        </label>
+                        <button class="next">送出</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question sending noNav">
+                    <div class="question-box">
+                        <h2>提交中...</h2>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question noNav thanks">
+                    <div class="question-box">
+                        <h2>感謝您的填寫！</h2>
+                        <p>
+                            我們已經收到您的報名資料，請留意您的信箱，我們將會寄送行前通知信給您。
+                        </p>
+                        <div class="highlight">
+                            <h2>加入中電會 Discord 社群</h2>
+                            <p>與中電貓和其他電神交流吧w</p>
+                            <button
+                                class="discord"
+                                onclick="window.open('https://dc.scaict.org')"
+                            >
+                                <img src="/static/discord.svg" alt="" /> 加入
+                                Discord
+                            </button>
+                        </div>
+                        <div class="credit"></div>
+                    </div>
+                </div>
+            </section>
+            <nav>
+                <button class="back"><span>❮</span></button>
+                <button class="next skip"><span>❯</span></button>
+            </nav>
+            <div class="ball-container">
+                <div class="ball ball1"></div>
+                <div class="ball ball2"></div>
+                <div class="ball ball3"></div>
+            </div>
+        </main>
+        <script>
+            const main = document.querySelector("main");
+            const nextBtns = document.querySelectorAll(".next");
+            let current = 0;
 
-<body>
-    <main>
-        <section>
-            <div class="question intro noNav">
-                <div class="question-box">
-                    <h1>4/14 （日）網頁安全進階102 ─ 報名表單</h1>
-                    <div class="author">
-                        <img src="https://scaict.org/src/img/apple-touch-icon.png" alt="author thumbnail">中電會 SCAICT 製作
-                    </div>
-                    <div class="highlight">
-                        這次的課程與先前的網頁安全入門不同，在這堂課程裡會教你進階的網頁安全技巧，例如跨站腳本攻擊（XSS）、伺服器端請求偽造攻擊（SSRF）和更多你絕對會有興趣的資安技巧，透過學習這些手法，讓增進你對資安領域的了解，提升自己的資安技能。快來台中高工和我們一起學習這次的網頁安全課程吧！
-                    </div>
-                    <h2>課程詳細資訊</h2>
-                    <ul>
-                        <li><strong>主辦單位：</strong> 中部電資聯合會議 SCAICT</li>
-                        <li><strong>協辦單位：</strong> AIS3 教育部先進資通安全實務人才培育計畫</li>
-                        <li><strong>課程地點：</strong> 台中高工</li>
-                        <li><strong>課程對象：</strong> 全國高中職學生</li>
-                        <li><strong>課程費用：</strong> 免費 （當天午餐自理）</li>
-                        <li><strong>課程日期：</strong> 4/14（日）</li>
-                        <li><strong>課程時間：</strong> 9:30 ~ 16:00</li>
-                        <li><strong>課程內容：</strong>
-                            <ul>
-                                <li>進階網頁安全技巧（language trick、reverse shell、injection with waf、伺服器端請求偽造攻擊 SSRF、跨站腳本攻擊
-                                    XSS、Prototype Pollution）</li>
-                            </ul>
-                        </li>
-                        <li><strong>報名截止：</strong> 4/12（五）18:00</li>
-                    </ul>
-                    <h2>注意事項</h2>
-                    <ol>
-                        <li>課程的通知與課程網址會由 Email 一併發放，請隨時留意。</li>
-                        <li>需要全程參與課程才能領取證書。</li>
-                    </ol>
-                    <div class="start">
-                        <button class="next discord">
-                            <img src="/static/discord.svg" alt="">
-                            以 Discord 身分繼續
-                        </button>
-                        <button class="next" disabled>不登入直接開始填寫</button>
-                    </div>
-                    <div class="must">
-                        此份表單必須使用 Discord 登入才能填寫。
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題1:
-                    </div>
-                    <h2>姓名</h2>
-                    <p>
-                        請填寫中文全名
-                    </p>
-                    <div class="text-input">
-                        <input type="text" placeholder="王朝立">
-                        <div></div>
-                    </div>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題2:
-                    </div>
-                    <h2>Email</h2>
-                    <p>
-                        將傳送行前通知信至此信箱
-                    </p>
-                    <div class="text-input">
-                        <input type="email" placeholder="info@elvismao.com">
-                        <div></div>
-                    </div>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題3:
-                    </div>
-                    <h2>長度</h2>
-                    <p>
-                        請填寫數字
-                    </p>
-                    <div class="text-input">
-                        <input type="number" placeholder="30">
-                        <div></div>
-                    </div>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題4:
-                    </div>
-                    <h2>班級座號</h2>
-                    <p>
-                        請填寫班級座號
-                    </p>
-                    <div class="text-input">
-                        <input type="number" placeholder="505">
-                        <div></div>
-                    </div>
-                    <div class="text-input">
-                        <input type="number" placeholder="21">
-                        <div></div>
-                    </div>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題5:
-                    </div>
-                    <h2>衣服尺寸</h2>
-                    <p>
-                        請選擇衣服尺寸
-                    </p>
-                    <select id="">
-                        <option value="XS">XS</option>
-                        <option value="XS">S</option>
-                        <option value="XS">M</option>
-                        <option value="XS">L</option>
-                        <option value="XS">XL</option>
-                    </select>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題6:
-                    </div>
-                    <h2>你有病嗎?</h2>
-                    <p>
-                        好問題
-                    </p>
-                    <input type="radio" name="a" value="Yes" id="Yes">
-                    <label for="Yes" class="radio-input">
-                        <div class="radio-index">
-                            Y
-                        </div>Yes
-                    </label>
-                    <input type="radio" name="a" value="No" id="No">
-                    <label for="No" class="radio-input">
-                        <div class="radio-index">
-                            N
-                        </div>No
-                    </label>
-                    <button class="next">Next ❯</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question lastQuestion">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題6:
-                    </div>
-                    <h2>性別</h2>
-                    <input type="radio" name="b" value="male" id="male">
-                    <label for="male" class="radio-input">
-                        <div class="radio-index">
-                            A
-                        </div>Male
-                    </label>
-                    <input type="radio" name="b" value="female" id="female">
-                    <label for="female" class="radio-input">
-                        <div class="radio-index">
-                            B
-                        </div>Female
-                    </label>
-                    <input type="radio" name="b" value="email" id="email">
-                    <label for="email" class="radio-input">
-                        <div class="radio-index">
-                            C
-                        </div>email
-                    </label>
-                    <button class="next">送出</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question lastQuestion">
-                <div class="question-box">
-                    <div class="question-index">
-                        問題7:
-                    </div>
-                    <h2></h2>
-                    <input type="radio" name="b" value="male" id="male">
-                    <label for="male" class="radio-input">
-                        <div class="radio-index">
-                            A
-                        </div>Male
-                    </label>
-                    <input type="radio" name="b" value="female" id="female">
-                    <label for="female" class="radio-input">
-                        <div class="radio-index">
-                            B
-                        </div>Female
-                    </label>
-                    <input type="radio" name="b" value="email" id="email">
-                    <label for="email" class="radio-input">
-                        <div class="radio-index">
-                            C
-                        </div>email
-                    </label>
-                    <button class="next">送出</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question sending noNav">
-                <div class="question-box">
-                    <h2>提交中...</h2>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="question noNav thanks">
-                <div class="question-box">
-                    <h2>
-                        感謝您的填寫！
-                    </h2>
-                    <p>
-                        我們已經收到您的報名資料，請留意您的信箱，我們將會寄送行前通知信給您。
-                    </p>
-                    <div class="highlight">
-                        <h2>加入中電會 Discord 社群</h2>
-                        <p>與中電貓和其他電神交流吧w</p>
-                        <button class="discord" onclick="window.open('https://dc.scaict.org')"><img
-                                src="/static/discord.svg" alt="">
-                            加入 Discord</button>
-                    </div>
-                    <div class="credit"></div>
-                </div>
-            </div>
-        </section>
-        <nav>
-            <button class="back"><span>❮</span></button>
-            <button class="next skip"><span>❯</span></button>
-        </nav>
-        <div class="ball-container">
-            <div class="ball ball1">
-            </div>
-            <div class="ball ball2">
-            </div>
-            <div class="ball ball3">
-            </div>
-        </div>
-    </main>
-    <script>
-        const main = document.querySelector('main');
-        const nextBtns = document.querySelectorAll('.next');
-        let current = 10;
-
-        // save all input form current status to cookie
-        const saveStatusToCookie = () => {
-            const inputs = document.querySelectorAll('input');
-            const selects = document.querySelectorAll('select');
-            const radios = document.querySelectorAll('input[type="radio"]');
-            const status = {
-                inputs: {},
-                selects: {},
-                radios: {}
+            // save all input form current status to cookie
+            const saveStatusToCookie = () => {
+                const inputs = document.querySelectorAll("input");
+                const selects = document.querySelectorAll("select");
+                const radios = document.querySelectorAll('input[type="radio"]');
+                const status = {
+                    inputs: {},
+                    selects: {},
+                    radios: {},
+                };
+                inputs.forEach(input => {
+                    status.inputs[input.id] = input.value;
+                });
+                selects.forEach(select => {
+                    status.selects[select.id] = select.value;
+                });
+                radios.forEach(radio => {
+                    status.radios[radio.id] = radio.value;
+                });
+                // cookie can ony be read from this domain and last form 1 month
+                document.cookie = `status=${JSON.stringify(
+                    status
+                )};max-age=2592000`;
             };
-            inputs.forEach(input => {
-                status.inputs[input.id] = input.value;
+
+            // load all input form last status from cookie
+            const loadStatusFromCookie = () => {
+                const cookie = document.cookie;
+                const status = cookie
+                    .split(";")
+                    .find(c => c.includes("status="));
+                if (status) {
+                    const { inputs, selects, radios } = JSON.parse(
+                        status.split("=")[1]
+                    );
+                    Object.entries(inputs).forEach(([id, value]) => {
+                        document.querySelector(`#${id}`).value = value;
+                    });
+                    Object.entries(selects).forEach(([id, value]) => {
+                        document.querySelector(`#${id}`).value = value;
+                    });
+                    Object.entries(radios).forEach(([id, value]) => {
+                        document.querySelector(`#${id}`).checked = true;
+                    });
+                }
+            };
+
+            const nextPage = () => {
+                saveStatusToCookie();
+                // check if all current answer is valid
+                const currentQuestion = document.querySelector(
+                    `main>section:nth-child(${current})`
+                );
+
+                if (currentQuestion) {
+                    console.log(currentQuestion);
+                    const inputs = [...currentQuestion.querySelectorAll("input"),...currentQuestion.querySelectorAll("select")]
+                    let invalidInput = false;
+                    for (let input of inputs) {
+                        if (!input.checkValidity()) {
+                            input.classList.remove("invalid");
+                            input.offsetWidth;
+                            input.classList.add("invalid");
+                            invalidInput = true;
+                            break;
+                        }
+                    }
+                    if (invalidInput) return;
+                }
+                main.classList.remove("backward");
+                const last = document.querySelector(".last");
+                if (last) last.classList.remove("last");
+                const latest = document.querySelector(".show");
+                if (latest) {
+                    latest.classList.remove("show");
+                    latest.classList.add("last");
+                }
+                current++;
+                document
+                    .querySelector(`main>section:nth-child(${current})`)
+                    .classList.add("show");
+            };
+
+            nextPage();
+
+            const backBtn = document.querySelector(".back");
+
+            backBtn.addEventListener("click", () => {
+                main.classList.add("backward");
+                const last = document.querySelector(".last");
+                if (last) last.classList.remove("last");
+                const latest = document.querySelector(".show");
+                if (latest) {
+                    latest.classList.remove("show");
+                    latest.classList.add("last");
+                }
+                current--;
+                document
+                    .querySelector(`main>section:nth-child(${current})`)
+                    .classList.add("show");
+                saveStatusToCookie();
             });
-            selects.forEach(select => {
-                status.selects[select.id] = select.value;
+
+            nextBtns.forEach(btn => {
+                btn.addEventListener("click", nextPage);
             });
-            radios.forEach(radio => {
-                status.radios[radio.id] = radio.value;
-            });
-            // cookie can ony be read from this domain and last form 1 month
-            document.cookie = `status=${JSON.stringify(status)};max-age=2592000`;
-        }
-
-        // load all input form last status from cookie
-        const loadStatusFromCookie = () => {
-            const cookie = document.cookie;
-            const status = cookie.split(';').find(c => c.includes('status='));
-            if (status) {
-                const { inputs, selects, radios } = JSON.parse(status.split('=')[1]);
-                Object.entries(inputs).forEach(([id, value]) => {
-                    document.querySelector(`#${id}`).value = value;
-                });
-                Object.entries(selects).forEach(([id, value]) => {
-                    document.querySelector(`#${id}`).value = value;
-                });
-                Object.entries(radios).forEach(([id, value]) => {
-                    document.querySelector(`#${id}`).checked = true;
-                });
-            }
-        }
-
-        const nextPage = () => {
-            main.classList.remove('backward');
-            const last = document.querySelector('.last');
-            if (last)
-                last.classList.remove('last');
-            const latest = document.querySelector('.show');
-            if (latest) {
-                latest.classList.remove('show');
-                latest.classList.add('last');
-            }
-            current++;
-            document.querySelector(`main>section:nth-child(${current})`).classList.add('show');
-            saveStatusToCookie();
-        }
-        nextPage();
-
-        const backBtn = document.querySelector('.back');
-
-        backBtn.addEventListener('click', () => {
-            main.classList.add('backward');
-            const last = document.querySelector('.last');
-            if (last)
-                last.classList.remove('last');
-            const latest = document.querySelector('.show');
-            if (latest) {
-                latest.classList.remove('show');
-                latest.classList.add('last');
-            }
-            current--;
-            document.querySelector(`main>section:nth-child(${current})`).classList.add('show');
-            saveStatusToCookie();
-        });
-
-        nextBtns.forEach(btn => {
-            btn.addEventListener('click', nextPage);
-        });
-
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
