@@ -1,0 +1,522 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+
+:root {
+    --theme-color: 189;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100svh;
+}
+
+body,
+input,
+button {
+    font-family: "Noto Sans TC", ststem-ui, sans-serif;
+    font-optical-sizing: auto;
+}
+
+header {
+    background: linear-gradient(
+        100deg,
+        hsl(var(--theme-color), 77%, 53%),
+        hsl(calc(var(--theme-color) + 30), 77%, 53%)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    color: #fff;
+}
+
+.header-container {
+    width: 100%;
+    max-width: calc(1000px - 4rem);
+    margin: 0 auto;
+}
+
+.back {
+    display: flex;
+    align-items: flex-end;
+    height: 5rem;
+}
+.back img {
+    height: 1rem;
+    transform: rotate(-90deg);
+    filter: invert(1);
+    transition: transform 0.3s;
+}
+.back a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back a:hover img {
+    transform: rotate(-90deg) translateY(-0.3rem);
+}
+h1 {
+    font-size: 3rem;
+    margin-block: 0.3rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    color: #000;
+}
+#thumbnail-checkbox {
+    display: none;
+}
+#thumbnail {
+    position: relative;
+}
+#thumbnail img.profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 3;
+    position: relative;
+}
+#thumbnail img {
+    filter: unset;
+    height: unset;
+    width: 1.25rem;
+}
+
+.thumbnail-actions {
+    border-radius: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.522);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+#thumbnail label {
+    display: block;
+}
+#thumbnail-checkbox:checked + #thumbnail .thumbnail-actions {
+    height: 7.75rem;
+    padding-top: 3.3rem;
+}
+
+nav img {
+    height: 1.5rem;
+    filter: invert(1) opacity(0.9);
+}
+nav button {
+    background: transparent;
+    border: none;
+    outline: transparent;
+    cursor: pointer;
+    line-height: 1;
+}
+nav > label {
+    line-height: 1;
+}
+#settingBtn {
+    border: none;
+    outline: transparent;
+    background: transparent;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100svh - 15rem);
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.count {
+    flex-grow: 1;
+}
+
+#form-list article {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    transition: height 0.3s;
+    cursor: pointer;
+    --theme-bg: 250;
+    background: linear-gradient(
+        160deg,
+        hsl(var(--theme-bg), 86%, 89%),
+        #fff 40%
+    );
+}
+article {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+.form-info {
+    flex-grow: 1;
+}
+
+.form-info p {
+    color: #575757;
+}
+.form-actions {
+    height: 0;
+    overflow: hidden;
+}
+
+article:hover .form-actions {
+    margin-top: 1rem;
+    height: 1.3rem;
+    transition: height 0.3s;
+}
+
+.form-actions img {
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+.form-title {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+.state {
+    border-radius: 1rem;
+    height: 2rem;
+    background-color: #c6c6c6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+    margin-left: 1rem;
+    line-height: 1rem;
+}
+
+.state::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.4rem;
+    display: block;
+    border-radius: 50%;
+    background-color: hsl(136, 0%, 15%);
+}
+
+.open {
+    background-color: #c2ffd2;
+    color: #004d15;
+}
+
+.open::before {
+    background-color: #004d15;
+}
+
+.closed {
+    background-color: #ffc2c2;
+    color: #4d0000;
+}
+.open::before {
+    background-color: #4d0000;
+}
+
+footer {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    color: #8b8b8b;
+}
+
+select {
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+    font-size: 1rem;
+    font-family: "Noto Sans TC", ststem-ui, sans-serif;
+    cursor: pointer;
+}
+#sortDirection {
+    display: none;
+}
+.sort-direction {
+    background: url(/static/arrow-up.svg) no-repeat center;
+    background-size: contain;
+    padding-right: 1.5rem;
+    margin-inline: 0.54rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: transform 0.3s;
+}
+
+#sortDirection:checked + .sort-direction {
+    transform: scaleY(-1);
+}
+#hideExpired {
+    margin-right: 0.2rem;
+}
+
+label {
+    cursor: pointer;
+}
+
+#form-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222222;
+}
+
+#setting {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#settingBtn:checked ~ #setting {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#setting .modal {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    width: calc(100% - 2rem);
+    max-width: 400px;
+}
+#setting .modal h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+#setting .modal label,
+#setting .modal input {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+#setting .modal input {
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #c6c6c6;
+    border-radius: 0.5rem;
+}
+
+#setting .modal button {
+    background-color: #2bc0e4;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#setting .modal button:hover {
+    background-color: #2bc0e4;
+}
+
+#setting .modal button:active {
+    background-color: #2bc0e4;
+}
+
+#setting .modal button:focus {
+    outline: none;
+}
+
+#settingBtn {
+    display: none;
+}
+#setting .modal .close {
+    text-align: right;
+    margin-bottom: -1.5rem;
+}
+.close img {
+    width: 1rem;
+}
+
+.proterties {
+    line-height: 1.75;
+}
+
+.editable:hover {
+    outline: #ffffffa8 dashed 3px;
+}
+
+.tags {
+    display: inline-flex;
+}
+
+.tags span {
+    background-color: #f8f9face;
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #3c3c3c;
+    cursor: pointer;
+    display: block;
+    min-height: 1.75rem;
+    min-width: 2rem;
+}
+
+.tags span.add {
+    background-color: transparent;
+    border: #fff dashed 2px;
+    height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+}
+
+.tags span:not(.add):hover::after {
+    content: "✖";
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #3c3c3c;
+}
+.tags span:not(.add):hover {
+    background-color: #f8f9fa;
+}
+
+.analytics {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.analytics > div {
+    text-align: center;
+    background: #ffffffb7;
+    color: #2d2d2d;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 9rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.analytics span {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.response-time {
+    margin-top: 1.5rem;
+    line-height: 2.5;
+}
+
+#response-time-start,
+#response-time-end {
+    margin-inline: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #c6c6c683;
+    border-radius: 0.5rem;
+}
+
+#closeForm {
+    background-color: #fea3a3;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#closeForm:hover {
+    background-color: #ff8d8d;
+}
+#responseBtn ~ input {
+    pointer-events: none;
+    background: #ffffff6e;
+    color: #6363636b;
+}
+
+#responseBtn:checked ~ input {
+    pointer-events: all;
+    background: #fff;
+    color: #000;
+}
+
+#colorPalette {
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    z-index: 2;
+    width: 8rem;
+}
+.colorPalette {
+    position: relative;
+}
+
+#colorPaletteBtn:checked + .colorPalette::before,
+#colorPaletteBtn:checked + .colorPalette::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.589);
+    border-radius: 2.5rem 2.5rem 0 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+#colorPaletteBtn:checked + .colorPalette::after {
+    top: 50%;
+    border-radius: 2.5rem;
+    width: 10rem;
+    transform: translate(-50%, calc(-50% + 2.5rem));
+}
+#colorPaletteBtn {
+    display: none;
+}
+#colorPaletteBtn:checked + label #colorPalette {
+    display: block;
+}

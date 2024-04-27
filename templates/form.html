@@ -6,8 +6,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Form</title>
-        <link rel="stylesheet" href="/static/form.css" />
-        <link rel="stylesheet" href="/static/ball.css" />
+        <link rel="stylesheet" href="/static/css/form.css" />
+        <link rel="stylesheet" href="/static/css/ball.css" />
+        <link rel="stylesheet" href="/static/css/element.css" />
     </head>
 
     <body>
@@ -23,7 +24,8 @@
                             />中電會 SCAICT 製作
                         </div>
                         <div class="history">
-                            你似乎填寫這份表單到一半。不用擔心! 我們已經幫你保存了進度，你可以繼續填寫。
+                            你似乎填寫這份表單到一半。不用擔心!
+                            我們已經幫你保存了進度，你可以繼續填寫。
                         </div>
                         <div class="highlight">
                             這次的課程與先前的網頁安全入門不同，在這堂課程裡會教你進階的網頁安全技巧，例如跨站腳本攻擊（XSS）、伺服器端請求偽造攻擊（SSRF）和更多你絕對會有興趣的資安技巧，透過學習這些手法，讓增進你對資安領域的了解，提升自己的資安技能。快來台中高工和我們一起學習這次的網頁安全課程吧！
@@ -121,7 +123,7 @@
                         <h2>長度</h2>
                         <p>請填寫數字</p>
                         <div class="text-input">
-                            <input type="number" placeholder="30" min="0"/>
+                            <input type="number" placeholder="30" min="0" />
                             <div></div>
                         </div>
                         <button class="next">Next ❯</button>
@@ -169,7 +171,13 @@
                         <div class="question-index">問題6:</div>
                         <h2>你有病嗎?</h2>
                         <p>好問題</p>
-                        <input type="radio" name="a" value="Yes" id="Yes" required />
+                        <input
+                            type="radio"
+                            name="a"
+                            value="Yes"
+                            id="Yes"
+                            required
+                        />
                         <label for="Yes" class="radio-input">
                             <div class="radio-index">Y</div>
                             Yes
@@ -341,7 +349,10 @@
 
                 if (currentQuestion) {
                     console.log(currentQuestion);
-                    const inputs = [...currentQuestion.querySelectorAll("input"),...currentQuestion.querySelectorAll("select")]
+                    const inputs = [
+                        ...currentQuestion.querySelectorAll("input"),
+                        ...currentQuestion.querySelectorAll("select"),
+                    ];
                     let invalidInput = false;
                     for (let input of inputs) {
                         if (!input.checkValidity()) {

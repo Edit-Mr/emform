@@ -1,92 +1,105 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>emform</title>
+        <link rel="stylesheet" href="/static/css/ball.css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emform</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            body {
+                font-family: "Arial", sans-serif;
+                text-align: center;
+            }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-        }
+            main {
+                min-height: 100svh;
+                display: flex;
+                flex-direction: column;
+                z-index: 2;
+                position: relative;
+            }
 
-        main {
-            min-height: 100svh;
-            display: flex;
-            flex-direction: column;
-        }
+            header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                flex-grow: 1;
+            }
 
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            flex-grow: 1;
-        }
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+            h2 {
+                font-size: 1.5rem;
+                color: #8b8b8b;
+            }
 
-        h2 {
-            font-size: 1.5rem;
-            color: #8b8b8b;
-        }
+            header a {
+                display: inline-block;
+                padding: 1rem 2rem;
+                background-color: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 2rem;
+            }
 
-        header a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 2rem;
-        }
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: #ffffff72;
+                padding: 1rem 0;
+                color: #8b8b8b;
+            }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #f8f9fa;
-            padding: 1rem 0;
-            color: #8b8b8b;
-        }
+            a:hover {
+                opacity: 0.9;
+            }
 
-        a:hover{
-            opacity: .9;
-        }
+            a:active {
+                opacity: 0.8;
+            }
+            footer a {
+                color: #8b8b8b;
+            }
+            .ball-container {
+                --ball-color: 187;
+            }
+        </style>
+    </head>
 
-        a:active{
-            opacity: .8;
-        }
-        footer a{
-            color: #8b8b8b;
-        }
-    </style>
-</head>
+    <body>
+        <main>
+            <header>
+                <h1>emform</h1>
+                <h2>A lightweight modern form website.</h2>
+                <nav>
+                    <a href="https://github.com/Edit-Mr/emform"
+                        >View On GitHub</a
+                    >
+                </nav>
+            </header>
 
-<body>
-    <main>
-        <header>
-            <h1>emform</h1>
-            <h2>A lightweight modern form website.</h2>
-            <nav>
-                <a href="https://github.com/Edit-Mr/emform">View On GitHub</a>
-            </nav>
-        </header>
-
-        <footer>
-            Made by <a href="https://github.com/Edit-Mr">Elvis Mao</a>
-        </footer>
-    </main>
-</body>
-
+            <footer>
+                Made by <a href="https://github.com/Edit-Mr">Elvis Mao</a>
+            </footer>
+        </main>
+        <div class="ball-container">
+            <div class="ball ball1"></div>
+            <div class="ball ball2"></div>
+            <div class="ball ball3"></div>
+        </div>
+    </body>
 </html>

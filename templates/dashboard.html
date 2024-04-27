@@ -1,93 +1,142 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="zh-hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>儀錶板 - embox</title>
+        <link rel="stylesheet" href="/static/css/dashboard.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>儀錶板 - embox</title>
-    <link rel="stylesheet" href="/static/dashboard.css">
-</head>
-
-<body>
-    <header>
-        <button id="settingBtn"></button>
-        <h1>儀錶板</h1>
-    </header>
-    <main>
-        <div class="top">
-            <div class="count">
-                總共 20 份表單
+    <body>
+        <header>
+            <div class="header-container">
+                <nav>
+                    <input type="checkbox" id="thumbnail-checkbox" />
+                    <div id="thumbnail">
+                        <label for="thumbnail-checkbox">
+                            <img
+                                src="https://emtech.cc/icons/EMprofile.png"
+                                alt=""
+                                class="profile"
+                        /></label>
+                        <div class="thumbnail-actions">
+                            <label for="settingBtn">
+                                <img src="/static/gear.svg" alt="" />
+                            </label>
+                            <a href="/logout"
+                                ><img
+                                    src="/static/arrow-right-from-bracket.svg"
+                                    alt=""
+                            /></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="back"></div>
+                <h1>SCAICT, 歡迎回來!</h1>
             </div>
-            <input type="checkbox" id="hideExpired">
-            <label for="hideExpired">隱藏已過期</label>
-            <button class="sort-direction"></button>
-            <select name="sort" id="sort">
-                <option value="filename">名稱</option>
-                <option value="created_at">建立時間</option>
-                <option value="updated_at">更新時間</option>
-            </select>
-        </div>
-        <section id="form-list">
-            <article>
-                <div class="form-info">
-                    <div class="form-title">
-                        <h2>表單名稱</h2>
-                        <div class="state closed">
-                            已關閉
+        </header>
+        <main>
+            <div class="top">
+                <div class="count">總共 20 份表單</div>
+                <input type="checkbox" id="hideExpired" />
+                <label for="hideExpired">隱藏已過期</label>
+                <input type="checkbox" id="sortDirection" />
+                <label for="sortDirection" class="sort-direction"></label>
+                <select name="sort" id="sort">
+                    <option value="filename">名稱</option>
+                    <option value="created_at">建立時間</option>
+                    <option value="updated_at">更新時間</option>
+                </select>
+            </div>
+            <section id="form-list">
+                <article style="--theme-bg: 187">
+                    <div class="form-info">
+                        <div class="form-title">
+                            <h2>表單名稱</h2>
+                            <div class="state closed">已關閉</div>
                         </div>
-                    </div>
 
-                    <p>建立時間：2020-01-01 12:00:00</p>
-                    <p>更新時間：2020-01-01 12:00:00</p>
-                </div>
-                <div class="form-actions">
-                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
-                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
-                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
-                </div>
-            </article>
-            <article>
-                <div class="form-info">
-                    <div class="form-title">
-                        <h2>表單名稱</h2>
-                        <div class="state">
-                            草稿
+                        <p>建立時間：2020-01-01 12:00:00</p>
+                        <p>更新時間：2020-01-01 12:00:00</p>
+                    </div>
+                    <div class="form-actions">
+                        <a href="/form/1"
+                            ><img src="/static/pen-to-square.svg"
+                        /></a>
+                        <a href="/form/1/preview"
+                            ><img src="/static/up-right-from-square.svg" alt=""
+                        /></a>
+                        <a href="/form/1/responses"
+                            ><img src="/static/file-arrow-down.svg" alt=""
+                        /></a>
+                    </div>
+                </article>
+                <article style="--theme-bg: 250">
+                    <div class="form-info">
+                        <div class="form-title">
+                            <h2>表單名稱</h2>
+                            <div class="state">草稿</div>
                         </div>
-                    </div>
 
-                    <p>建立時間：2020-01-01 12:00:00</p>
-                    <p>更新時間：2020-01-01 12:00:00</p>
-                </div>
-                <div class="form-actions">
-                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
-                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
-                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
-                </div>
-            </article>
-            <article>
-                <div class="form-info">
-                    <div class="form-title">
-                        <h2>表單名稱</h2>
-                        <div class="state open">
-                            開放中
+                        <p>建立時間：2020-01-01 12:00:00</p>
+                        <p>更新時間：2020-01-01 12:00:00</p>
+                    </div>
+                    <div class="form-actions">
+                        <a href="/form/1"
+                            ><img src="/static/pen-to-square.svg"
+                        /></a>
+                        <a href="/form/1/preview"
+                            ><img src="/static/up-right-from-square.svg" alt=""
+                        /></a>
+                        <a href="/form/1/responses"
+                            ><img src="/static/file-arrow-down.svg" alt=""
+                        /></a>
+                    </div>
+                </article>
+                <article style="--theme-bg: 111">
+                    <div class="form-info">
+                        <div class="form-title">
+                            <h2>表單名稱</h2>
+                            <div class="state open">開放中</div>
                         </div>
-                    </div>
 
-                    <p>建立時間：2020-01-01 12:00:00</p>
-                    <p>更新時間：2020-01-01 12:00:00</p>
-                </div>
-                <div class="form-actions">
-                    <a href="/form/1"><img src="/static/pen-to-square.svg"></a>
-                    <a href="/form/1/preview"><img src="/static/up-right-from-square.svg" alt=""></a>
-                    <a href="/form/1/responses"><img src="/static/file-arrow-down.svg" alt=""></a>
-                </div>
-            </article>
+                        <p>建立時間：2020-01-01 12:00:00</p>
+                        <p>更新時間：2020-01-01 12:00:00</p>
+                    </div>
+                    <div class="form-actions">
+                        <a href="/form/1"
+                            ><img src="/static/pen-to-square.svg"
+                        /></a>
+                        <a href="/form/1/preview"
+                            ><img src="/static/up-right-from-square.svg" alt=""
+                        /></a>
+                        <a href="/form/1/responses"
+                            ><img src="/static/file-arrow-down.svg" alt=""
+                        /></a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>embox by Elvis Mao</p>
+        </footer>
+        <input type="checkbox" id="settingBtn" />
+        <section id="setting">
+            <div class="modal">
+                <label for="settingBtn" class="close">
+                    <img src="/static/xmark.svg" alt="" />
+                </label>
+                <h2>設定</h2>
+                <form action="/setting" method="post">
+                    <label for="username">使用者名稱</label>
+                    <input type="text" name="username" id="username" />
+                    <label for="password">密碼</label>
+                    <input type="password" name="password" id="password" />
+                    <button type="submit">儲存</button>
+                </form>
+            </div>
         </section>
-
-    </main>
-    <footer>
-        <p>embox by Elvis Mao</p>
-    </footer>
-</body>
-
+    </body>
 </html>

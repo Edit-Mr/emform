@@ -1,0 +1,202 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="zh-hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>儀錶板 - embox</title>
+        <link rel="stylesheet" href="/static/css/dashboard.css" />
+    </head>
+
+    <body>
+        <header class="info">
+            <div class="header-container">
+                <nav>
+                    <input type="checkbox" id="colorPaletteBtn">
+                    <label for="colorPaletteBtn" class="colorPalette">
+                        <img src="/static/palette.svg" alt="" />
+                        <input type="range" id="colorPalette" min="0" max="360" value="189" />
+                    </label>
+                    <label for="settingBtn">
+                        <img src="/static/gear.svg" alt="" />
+                    </label>
+                    <button>
+                        <img src="/static/file-arrow-down.svg" alt="" />
+                    </button>
+                    <button>
+                        <img src="/static/copy.svg" alt="" />
+                    </button>
+                    <input type="checkbox" id="thumbnail-checkbox" />
+                    <div id="thumbnail">
+                        <label for="thumbnail-checkbox">
+                            <img
+                                src="https://emtech.cc/icons/EMprofile.png"
+                                alt=""
+                                class="profile"
+                        /></label>
+                        <div class="thumbnail-actions">
+                            <label for="settingBtn">
+                                <img src="/static/gear.svg" alt="" />
+                            </label>
+                            <a href="/logout"
+                                ><img
+                                    src="/static/arrow-right-from-bracket.svg"
+                            /></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="back">
+                    <a href="/dashboard"
+                        ><img src="/static/arrow-up.svg" alt="" />回到列表</a
+                    >
+                </div>
+                <h1 contenteditable="true" class="editable">新表單</h1>
+                <div class="proterties">
+                    ID:
+                    <span id="form-id" contenteditable="true" class="editable"
+                        >welcome</span
+                    ><br />
+                    2024/5/12 建立<br />
+                    標籤:
+                    <span class="tags">
+                        <span>標籤1</span>
+                        <span>標籤2</span>
+                        <span>標籤3</span>
+                        <span class="add">新增標籤...</span>
+                    </span>
+                </div>
+                <div class="analytics">
+                    <div class="questions">
+                        <div class="title">問題數</div>
+                        <p><span>0</span> 題</p>
+                    </div>
+                    <div class="responses">
+                        <div class="title">回應數</div>
+                        <p><span>0</span> 份</p>
+                    </div>
+                    <div class="average">
+                        <div class="title">平均回應時間</div>
+                        <p><span>0</span> 分</p>
+                    </div>
+                </div>
+                <div class="response-time">
+                    <input type="checkbox" id="responseBtn" />
+                    <label for="responseBtn">回應時間限制</label>
+                    <input type="datetime-local" id="response-time-start" /> ~
+                    <input type="datetime-local" id="response-time-end" />
+                    <button id="closeForm">立即關閉回應</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="question-list">
+                <article>
+                    <div class="question">
+                        <div class="question-title">
+                            <h2>問題標題</h2>
+                            <div class="question-type">單選</div>
+                        </div>
+                        <div class="question-options">
+                            <div class="option">
+                                <input
+                                    type="radio"
+                                    name="question-1"
+                                    id="option-1"
+                                />
+                                <label for="option-1">選項1</label>
+                            </div>
+                            <div class="option">
+                                <input
+                                    type="radio"
+                                    name="question-1"
+                                    id="option-2"
+                                />
+                                <label for="option-2">選項2</label>
+                            </div>
+                            <div class="option">
+                                <input
+                                    type="radio"
+                                    name="question-1"
+                                    id="option-3"
+                                />
+                                <label for="option-3">選項3</label>
+                            </div>
+                            <div class="option">
+                                <input
+                                    type="radio"
+                                    name="question-1"
+                                    id="option-4"
+                                />
+                                <label for="option-4">選項4</label>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>embox by Elvis Mao</p>
+        </footer>
+        <input type="checkbox" id="settingBtn" />
+        <section id="setting">
+            <div class="modal">
+                <label for="settingBtn" class="close">
+                    <img src="/static/xmark.svg" alt="" />
+                </label>
+                <h2>設定</h2>
+                <form action="/setting" method="post">
+                    <label for="username">使用者名稱</label>
+                    <input type="text" name="username" id="username" />
+                    <label for="password">密碼</label>
+                    <input type="password" name="password" id="password" />
+                    <button type="submit">儲存</button>
+                </form>
+            </div>
+        </section>
+        <script>
+            document
+                .getElementById("form-id")
+                .addEventListener("keydown", evt => {
+                    if (evt.keyCode === 13) {
+                        evt.preventDefault();
+                    }
+                });
+
+            // remove tag when click
+            document.querySelector(".tags").addEventListener("click", evt => {
+                if (evt.target.classList.contains("tags")) return;
+                if (evt.target.classList.contains("add")) {
+                    const tag = document.createElement("span");
+                    document
+                        .querySelector(".tags")
+                        .insertBefore(tag, evt.target);
+                    // set editable and focus
+                    tag.contentEditable = true;
+                    tag.addEventListener("keydown", evt => {
+                        if (evt.keyCode === 13) {
+                            evt.preventDefault();
+                        }
+                    });
+                    tag.focus();
+                    // after not editing, remove tag if empty
+                    tag.addEventListener("blur", evt => {
+                        if (tag.innerHTML === "") {
+                            tag.remove();
+                        }
+                    });
+                } else if (evt.target.tagName === "SPAN") {
+                    evt.target.remove();
+                }
+            });
+
+            // update --theme-color in :root when color changed
+            document.getElementById("colorPalette").addEventListener("input", evt => {
+                document.documentElement.style.setProperty(
+                    "--theme-color",
+                    evt.target.value
+                );
+            });
+        </script>
+    </body>
+</html>
