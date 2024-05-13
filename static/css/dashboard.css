@@ -88,6 +88,7 @@ nav {
     object-fit: cover;
     z-index: 3;
     position: relative;
+    background: #fff;
 }
 #thumbnail img {
     filter: unset;
@@ -129,6 +130,13 @@ nav button {
     outline: transparent;
     cursor: pointer;
     line-height: 1;
+}
+nav > * {
+    transition: transform 0.3s;
+}
+
+nav > *:hover {
+    transform: scale(1.1);
 }
 nav > label {
     line-height: 1;
@@ -172,7 +180,7 @@ main {
 article {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
         rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     border-radius: 1rem;
 }
 .form-info {
@@ -391,6 +399,10 @@ h2 {
     outline: #ffffffa8 dashed 3px;
 }
 
+#form-id:hover {
+    outline: #ffffffa8 dashed 2px;
+}
+
 .tags {
     display: inline-flex;
 }
@@ -523,4 +535,69 @@ h2 {
 }
 #colorPaletteBtn:checked + label #colorPalette {
     display: block;
+}
+
+.analytics > div {
+    position: relative;
+    overflow: hidden;
+}
+.analytics > div::before {
+    content: "";
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+    width: 5rem;
+    height: 5rem;
+    filter: invert(1) opacity(0.3);
+}
+
+.questions::before {
+    background-image: url(/static/circle-question.svg);
+    background-size: contain;
+}
+
+.responses::before {
+    background-image: url(/static/calculator.svg);
+    background-size: contain;
+}
+
+.average::before {
+    background-image: url(/static/hourglass-end.svg);
+    background-size: contain;
+}
+
+/* .edit-btn {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.edit-btn::after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: url(/static/pencil.svg);
+    font-size: 1.5em;
+} */
+
+article h2 {
+    margin-bottom: 1rem;
+}
+
+/* markdown editing */
+.CodeMirror {
+    border-radius: 1rem;
+    font-size: 0.8rem !important;
+}
+.CodeMirror,
+.CodeMirror-scroll {
+    min-height: 1rem !important;
+}
+
+.editor-toolbar{
+    display: none;
 }

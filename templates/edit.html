@@ -13,10 +13,16 @@
         <header class="info">
             <div class="header-container">
                 <nav>
-                    <input type="checkbox" id="colorPaletteBtn">
+                    <input type="checkbox" id="colorPaletteBtn" />
                     <label for="colorPaletteBtn" class="colorPalette">
                         <img src="/static/palette.svg" alt="" />
-                        <input type="range" id="colorPalette" min="0" max="360" value="189" />
+                        <input
+                            type="range"
+                            id="colorPalette"
+                            min="0"
+                            max="360"
+                            value="189"
+                        />
                     </label>
                     <label for="settingBtn">
                         <img src="/static/gear.svg" alt="" />
@@ -91,6 +97,16 @@
         </header>
         <main>
             <section id="question-list">
+                <article>
+                    <h2>
+                        說明
+                        <!-- <button
+                            onclick="editText('textarea-about')"
+                            class="edit-btn"
+                        ></button> -->
+                    </h2>
+                    <textarea id="textarea-about" rows="3"></textarea>
+                </article>
                 <article>
                     <div class="question">
                         <div class="question-title">
@@ -191,12 +207,25 @@
             });
 
             // update --theme-color in :root when color changed
-            document.getElementById("colorPalette").addEventListener("input", evt => {
-                document.documentElement.style.setProperty(
-                    "--theme-color",
-                    evt.target.value
-                );
+            document
+                .getElementById("colorPalette")
+                .addEventListener("input", evt => {
+                    document.documentElement.style.setProperty(
+                        "--theme-color",
+                        evt.target.value
+                    );
+                });
+        </script>
+        <script src="/static/js/simplemde.min.js"></script>
+        <link rel="stylesheet" href="/static/css/simplemde.min.css" />
+        <script>
+            // edit text
+            var simplemde = new SimpleMDE({
+                element: document.getElementById("textarea-about"),
+                // toolbar: false,
+                placeholder: "這個人很懶，甚麼都沒寫"
             });
+            simplemde.value();
         </script>
     </body>
 </html>
